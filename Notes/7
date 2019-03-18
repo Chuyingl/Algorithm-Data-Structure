@@ -1,0 +1,4 @@
+T： O（MN）, S: O(MN)
+f[i][j] represent the least steps from sub-string(0...i) to sub -string(0.......j)
+四种操作对应把原问题转换成不同子问题
+consider the last step:
