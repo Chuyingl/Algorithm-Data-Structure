@@ -1,0 +1,65 @@
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ * Example of iterate a tree:
+ * BSTIterator iterator = new BSTIterator(root);
+ * while (iterator.hasNext()) {
+ *    TreeNode node = iterator.next();
+ *    do something for node
+ * } 
+ */
+
+
+public class BSTIterator {
+    Stack<TreeNode>s;
+    /*
+    * @param root: The root of binary tree.
+      
+    */public BSTIterator(TreeNode root) {
+        // do intialization if necessary
+        s=new Stack<>();
+        while(root!=null){
+            s.push(root);
+            root=root.left;
+        }
+    }
+    /*
+     * @return: True if there has next node, or false
+     */
+    public boolean hasNext() {
+        // write your code here
+        return !s.isEmpty();
+    }
+
+    /*
+     * @return: return next node
+     */
+    public TreeNode next() {
+        // write your code here
+        TreeNode curt=s.peek();
+        TreeNode t =curt;
+        // case 1: it has right leaf
+        if(t.right!=null){
+            t=t.right;
+            while(t!=null){
+                s.push(t);
+                t=t.left;
+            }
+        }
+        //case 2: it doesn't have right leaf
+        else{
+            TreeNode node= s.pop();
+            while(!s.isEmpty()&& node==s.peek().right){
+                node=s.pop();
+            }
+        }
+        return curt;
+    }
+}
