@@ -14,4 +14,7 @@ Some solutions and notes for hard questions on lintcode</br>
 [[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/6) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/6)</br>
 * **Edit Distance(DP)**
 [[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/7) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/7)</br>
-
+* **Coins in a Line II(DP)**
+[[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/8) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/8)</br>
+* **Merge Account**
+[[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/9) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/9)</br>
