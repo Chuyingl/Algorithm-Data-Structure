@@ -1,0 +1,12 @@
+有一个地方需要特别注意， 左边找第一个满足条件的，右边找第一个不满足条件的
+
+lower<sum[j]-sum[i]<=up
+
+if i is for sure
+
+sum[j]-up<sum[i]<sum[j]-lower;
+so, it can seperate to two part
+find j let
+sum[j]>sum[i]-end;
+find another j let
+sum[j]<=sum[i]-start;
