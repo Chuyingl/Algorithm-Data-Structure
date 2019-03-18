@@ -1,0 +1,5 @@
+!!!!! be careful about the boundary!!!!!!!!!
+Time Complecity O(n^2)
+Space Complexity O(n^2)
+
+f[i][j] represent the min prefix sum from i to j
