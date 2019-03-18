@@ -1,0 +1,5 @@
+思路： Union Find
+Step 1: Firstly construct a map1 to store realationship <email {id1, id2, id3 } >
+Step 2 : read recod in map1, for each record, the ids =ma1.get(email), need to be union, which mean they belongs to one account;
+Step 3: , build map2 to store <root account ,{email1, email2.... } >
+Step 4: output
