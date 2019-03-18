@@ -1,5 +1,5 @@
 # Algorithm & Data Structure
-Some solutions and notes for hard questions on lintcode</br>
+Solutions and my notes for hard questions on lintcode</br>
 * **Merged 2 Sorted Array**
 [[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Description/Merged2SortedArray) </br>
 * **Binary Search Tree Iteraor**
