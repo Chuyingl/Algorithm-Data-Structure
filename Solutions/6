@@ -1,0 +1,31 @@
+public class Solution {
+    /**
+     * @param A: An integer array
+     * @param k: A positive integer (k <= length(A))
+     * @param target: An integer
+     * @return: An integer
+     */
+    public int kSum(int[] A, int k, int target) {
+        // write your code here
+        int  n= A.length;
+        if(n==0){
+             return 0;
+        }
+        //inital dp
+        int[][][] f=new int[n+1][k+1][target+1];
+        for(int i=0; i<=n; ++i){
+            f[i][0][0]=1;
+        }
+        for(int i=1 ; i<=n; ++i){
+            for(int j=1; j<=k; ++j){
+                for(int s=1; s<=target;++s){
+                f[i][j][s]=f[i-1][j][s];
+                if(j>=1&&s>=A[i-1]){
+                    f[i][j][s]+=f[i-1][j-1][s-A[i-1]];
+                }
+            }
+        }
+        }
+        return f[n][k][target];
+    }
+}
