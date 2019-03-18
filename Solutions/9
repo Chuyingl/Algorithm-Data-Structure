@@ -1,0 +1,83 @@
+public class Solution {
+    /**
+     * @param accounts: List[List[str]]
+     * @return: return a List[List[str]]
+     */
+    Map<Integer, Integer>father;
+    public Map<String, List<Integer>>mergebyemail(List<List<String>>accounts){
+        Map<String, List<Integer>>map= new HashMap<>();
+        for(int i=0; i<accounts.size();++i){
+            int userid=i;
+            List<String>account=accounts.get(i);
+            for(int j=1;j<account.size();j++){
+                if(!map.containsKey(account.get(j))){
+                    map.put(account.get(j), new ArrayList<>());
+                }
+                map.get(account.get(j)).add(userid);
+            }
+        }
+        return map;
+    }
+    public Map<Integer, List<String>>mergebyid(List<List<String>>accounts){
+        Map<Integer, List<String>>map=new HashMap<>();
+        for(int i=0; i<accounts.size();++i){
+            int root=find(i);
+            List<String>account=accounts.get(i);
+            if(!map.containsKey(root)){
+                map.put(root, new ArrayList<>());
+            }
+            for(int j=1; j<account.size();j++){
+                if(!map.get(root).contains(account.get(j))){
+                map.get(root).add(account.get(j));
+                }
+            }
+        }
+        return map;
+    }
+    public int find(int a){
+        List<Integer>path=new ArrayList<>();
+        int k=a;
+        while(father.containsKey(k)){
+            path.add(k);
+            k=father.get(k);
+        }
+        for(int i :path){
+            father.put(i, k);
+        }
+        return k;
+    }
+    public void union(int a, int b){
+        int roota=find(a);
+        int rootb=find(b);
+        if(roota!=rootb){
+            father.put(roota,rootb);
+        }
+        return;
+    }
+    public List<List<String>> accountsMerge(List<List<String>> accounts) {
+        // write your code here
+        father=new HashMap<>();
+        List<List<String>>ans= new ArrayList<>();
+        if(accounts==null||accounts.size()==0){
+            return ans;
+        }
+        Map<String,List<Integer>>byemail=mergebyemail(accounts);
+        for(String email: byemail.keySet()){
+            List<Integer>idlist=byemail.get(email);
+            for(int id: idlist){
+                union(idlist.get(0),id);
+            }
+        }
+        Map<Integer,List<String>>byid=mergebyid(accounts);
+        for(Integer user: byid.keySet()){
+            List<String>sub=new ArrayList<>();
+            String name=accounts.get(user).get(0);
+            sub.add(name);
+            List<String>account=byid.get(user);
+            Collections.sort(account);
+            sub.addAll(account);
+            ans.add(sub);
+        }
+        return ans;
+    }
+}
