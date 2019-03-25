@@ -1,0 +1,4 @@
+==> 这题的重点在于moveToTail, 利用LinkedList  还有hashMap来实现，比较不容易想到的是， HashMap存储的是key 和前一个节点， 这样， 节点间的关系就清楚了
+==> set 的时候， 有的细节容易被忽略
+*   当存在key的时候， get（key）的操作已经做过一遍move to tail
+*   当 size>capacity的时候， 并不是一出位于head的node， 而是替换
