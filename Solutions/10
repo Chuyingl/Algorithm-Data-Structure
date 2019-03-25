@@ -1,0 +1,92 @@
+public class LRUCache {
+    /*
+    * @param capacity: An integer
+     
+    */
+    //implement by Linkedlist
+    public class ListNode{
+        public int val, key;
+        public ListNode next;
+        public ListNode(int key, int val){
+            this.val=val;
+            this.key=key;
+            this.next=null;
+        }
+    }
+     public ListNode dummy;
+     public ListNode tail;
+     public Map<Integer, ListNode>prevmap;
+     public Integer cap, size;
+    public LRUCache(int capacity) {
+        // do intialization if necessary
+        this.dummy=new ListNode(0, 0);
+        this.tail=this.dummy;
+        this.prevmap=new HashMap<>();
+        this.size=0;
+        this.cap=capacity;
+    }
+
+    /*
+     * @param key: An integer
+     * @return: An integer
+     */
+    public void moveToTail(int key){
+        ListNode prev=prevmap.get(key);
+        ListNode cur=prev.next;
+        //already at tail 
+        if(cur==tail){
+            return;
+        }
+        // change prev 
+        prev.next=prev.next.next;
+        tail.next=cur;
+        if(prev.next!=null){
+        prevmap.put(prev.next.key, prev);
+        }
+        // change cur
+        prevmap.put(cur.key,tail);
+        //
+        tail=cur;
+    }
+    public int get(int key) {
+        // write your code here
+        if(!prevmap.containsKey(key)){
+            return -1;
+        }
+        moveToTail(key);
+        return tail.val;
+    }
+
+    /*
+     * @param key: An integer
+     * @param value: An integer
+     * @return: nothing
+     */
+    public void set(int key, int value) {
+        // write your code here
+        //Case 1: if the key already exist, 
+        //get move the cur to tail
+        if(get(key)!=-1){
+            ListNode prev= prevmap.get(key);
+            prev.next.val=value;
+            return;
+        }
+        //case 2 no exist
+        //case 2 1 if size <= compacity
+        if(size<cap){
+            size++;
+            ListNode cur=new ListNode(key, value);
+            tail.next=cur;
+            prevmap.put(key,tail);
+            tail=cur;
+            return;
+        }
+        //case 2 2 if size > capacity
+        ListNode replace= dummy.next;
+        prevmap.remove(replace.key);
+        replace.key=key;
+        replace.val=value;
+        prevmap.put(key,dummy);
+        moveToTail(key);
+    }
+}
