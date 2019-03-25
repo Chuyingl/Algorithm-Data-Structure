@@ -18,3 +18,5 @@ Solutions and my notes for hard questions on lintcode</br>
 [[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/8) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/8)</br>
 * **Merge Account**
 [[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/9) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/9)</br>
+* **LRU Cache**
+[[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/10) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/10)</br>
