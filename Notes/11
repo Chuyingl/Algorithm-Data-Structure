@@ -1,0 +1,4 @@
+本体主要考的是data stream 的处理方法
+*   利用HashMap 存储只存在一此的元素， Set 来存储duplicate，linkedList 来控制出现的顺序
+*   哈希表存储的是 值， 和 前一个节点
+*   重点， 只需遍历一次
