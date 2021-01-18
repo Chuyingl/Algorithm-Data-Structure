@@ -1,0 +1,7 @@
+We can use bit operation to solve this question
+A ^ 0 = A;
+A ^ A = 0 ;
+A ^ B ^ C^ A^B = 0^(A^A)^(B^B)^C =C
+
+time complexity : O(N)
+space complexity : O(1)
