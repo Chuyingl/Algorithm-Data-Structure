@@ -23,5 +23,5 @@ Solutions and my notes for hard questions on lintcode</br>
 * **First Unique Number in Data Stream[Data Stream]**
 [[solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/Java/11) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/11)</br>
 * **[LeetCode 136] Single Number**
-[[C++ solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/cpp/Single_Number) [[note]](https://github.com/Chuyingl/lgorithm-Data-Structure/blob/master/Notes/lc136)</br>
+[[C++ solution]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Solutions/cpp/Single_Number) [[note]](https://github.com/Chuyingl/Algorithm-Data-Structure/blob/master/Notes/lc136)</br>
 
